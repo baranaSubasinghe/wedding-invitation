@@ -2,7 +2,11 @@ const params = new URLSearchParams(window.location.search);
 const guest = params.get("guest");
 
 if (guest) {
-  document.getElementById("guestName").innerText = guest;
+  const invitedGuestName = document.getElementById("invitedGuestName");
+
+  if (invitedGuestName) {
+    invitedGuestName.innerText = guest;
+  }
 }
 
 const weddingDate = new Date("August 27, 2026 19:00:00").getTime();
