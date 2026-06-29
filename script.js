@@ -78,30 +78,54 @@ const timer = setInterval(() => {
 
 /* Music */
 const music = document.getElementById("weddingMusic");
-const musicBtn = document.getElementById("musicBtn");
+const musicNotice = document.getElementById("musicNotice");
 
-window.addEventListener("load", () => {
-  if (!music || !musicBtn) return;
+let musicStarted = false;
+
+function startMusicOnTouch() {
+  if (!music || musicStarted) return;
 
   music.volume = 0.45;
 
   music.play()
     .then(() => {
-      musicBtn.innerText = "❚❚ Pause Music";
+      musicStarted = true;
+
+      if (musicNotice) {
+        musicNotice.classList.add("hide");
+      }
+
+      document.removeEventListener("click", startMusicOnTouch);
+      document.removeEventListener("touchstart", startMusicOnTouch);
+      document.removeEventListener("scroll", startMusicOnTouch);
     })
     .catch(() => {
-      musicBtn.innerText = "♫ Play Music";
+      if (musicNotice) {
+        musicNotice.classList.remove("hide");
+      }
+    });
+}
+
+window.addEventListener("load", () => {
+  if (!music) return;
+
+  music.volume = 0.45;
+
+  music.play()
+    .then(() => {
+      musicStarted = true;
+
+      if (musicNotice) {
+        musicNotice.classList.add("hide");
+      }
+    })
+    .catch(() => {
+      if (musicNotice) {
+        musicNotice.classList.remove("hide");
+      }
     });
 });
 
-function toggleMusic() {
-  if (!music || !musicBtn) return;
-
-  if (music.paused) {
-    music.play();
-    musicBtn.innerText = "❚❚ Pause Music";
-  } else {
-    music.pause();
-    musicBtn.innerText = "♫ Play Music";
-  }
-}
+document.addEventListener("click", startMusicOnTouch);
+document.addEventListener("touchstart", startMusicOnTouch);
+document.addEventListener("scroll", startMusicOnTouch);

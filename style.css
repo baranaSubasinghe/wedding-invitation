@@ -62,16 +62,27 @@ body {
   color: #7a5650;
 }
 
-.open-invite-btn {
-  margin-top: 28px;
-  padding: 13px 30px;
-  border-radius: 999px;
-  background: #5b2a22;
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.2);
+/* Scroll Hint */
+.scroll-hint {
+  margin-top: 34px;
+  text-align: center;
+  color: #8d625b;
+  animation: fadeIn 1.2s ease;
+}
+
+.scroll-hint span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.scroll-arrow {
+  font-size: 32px;
+  color: #5b2a22;
+  animation: bounceDown 1.4s infinite;
 }
 
 /* Invitation Image Section */
@@ -252,8 +263,7 @@ body {
 
 .location-btn:hover,
 .yes-btn:hover,
-.no-btn:hover,
-.open-invite-btn:hover {
+.no-btn:hover {
   transform: translateY(-3px);
 }
 
@@ -264,22 +274,49 @@ body {
   color: #7a5650;
 }
 
-/* Music Button */
-.music-btn {
+/* Music Notice */
+.music-notice {
   position: fixed;
-  right: 14px;
-  bottom: 14px;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
   z-index: 9999;
-  border: none;
-  padding: 12px 15px;
+  padding: 11px 18px;
   border-radius: 999px;
-  background: #5b2a22;
+  background: rgba(91, 42, 34, 0.92);
   color: white;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.35);
+  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.3);
+  pointer-events: none;
+}
+
+.music-notice.hide {
+  display: none;
+}
+
+/* Animations */
+@keyframes bounceDown {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 /* Tablet */
@@ -304,6 +341,15 @@ body {
 
   .guest-small {
     letter-spacing: 2.5px;
+  }
+
+  .scroll-hint span {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .scroll-arrow {
+    font-size: 28px;
   }
 
   .image-section,
@@ -354,15 +400,14 @@ body {
     min-width: unset;
   }
 
-  .music-btn {
-    right: 10px;
-    bottom: 10px;
-    padding: 10px 13px;
+  .music-notice {
+    bottom: 12px;
     font-size: 11px;
+    padding: 10px 14px;
   }
 }
 
-/* Small mobile */
+/* Small Mobile */
 @media (max-width: 390px) {
   .invited-name {
     top: 47.15%;
