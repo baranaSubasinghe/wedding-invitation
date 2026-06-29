@@ -19,8 +19,9 @@ body {
   overflow: hidden;
 }
 
+/* First Guest Section */
 .guest-section {
-  min-height: 100vh;
+  min-height: 100svh;
   padding: 40px 22px;
   display: flex;
   flex-direction: column;
@@ -35,7 +36,7 @@ body {
 }
 
 .guest-small {
-  font-size: 13px;
+  font-size: clamp(10px, 2.8vw, 13px);
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #8d625b;
@@ -43,21 +44,37 @@ body {
 }
 
 .guest-section h1 {
+  max-width: 95%;
   font-family: "Great Vibes", cursive;
-  font-size: 70px;
+  font-size: clamp(42px, 12vw, 76px);
   font-weight: 400;
   color: #5b2a22;
   margin-bottom: 20px;
+  line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .guest-text {
   max-width: 560px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 25px;
+  font-size: clamp(20px, 5vw, 26px);
   line-height: 1.6;
   color: #7a5650;
 }
 
+.open-invite-btn {
+  margin-top: 28px;
+  padding: 13px 30px;
+  border-radius: 999px;
+  background: #5b2a22;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.2);
+}
+
+/* Invitation Image Section */
 .image-section,
 .quote-section {
   width: 100%;
@@ -67,41 +84,47 @@ body {
   align-items: center;
 }
 
+.invitation-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .invitation-img,
 .quote-img {
   width: 100%;
   max-width: 900px;
   display: block;
 }
-.invitation-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-}
 
-.invitation-img {
-  width: 100%;
-  display: block;
-}
-
+/* Name on invitation bar */
 .invited-name {
   position: absolute;
   left: 50%;
-  top: 47.6%;
-  transform: translateX(-50%);
+  top: 47.25%;
+  transform: translate(-50%, -50%);
   width: 58%;
-  text-align: center;
+  height: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(18px, 3vw, 34px);
+  font-size: clamp(9px, 2.6vw, 30px);
   font-style: italic;
   color: #7a5650;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  line-height: 1;
+  text-align: center;
+
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  pointer-events: none;
 }
 
+/* Countdown + RSVP */
 .countdown-section,
 .rsvp-section {
   padding: 70px 22px;
@@ -139,7 +162,7 @@ body {
 
 .section-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
+  font-size: clamp(30px, 7vw, 38px);
   font-weight: 600;
   color: #5b2a22;
   margin-bottom: 18px;
@@ -149,7 +172,7 @@ body {
   max-width: 520px;
   margin: 0 auto 28px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
+  font-size: clamp(19px, 5vw, 22px);
   line-height: 1.7;
   color: #7a5650;
 }
@@ -172,13 +195,13 @@ body {
 .countdown span {
   display: block;
   font-family: "Cormorant Garamond", serif;
-  font-size: 34px;
+  font-size: clamp(24px, 7vw, 34px);
   font-weight: 700;
   color: #5b2a22;
 }
 
 .countdown small {
-  font-size: 11px;
+  font-size: clamp(8px, 2vw, 11px);
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #8d625b;
@@ -229,73 +252,125 @@ body {
 
 .location-btn:hover,
 .yes-btn:hover,
-.no-btn:hover {
+.no-btn:hover,
+.open-invite-btn:hover {
   transform: translateY(-3px);
 }
 
 .footer-note {
   margin-top: 28px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
+  font-size: clamp(18px, 5vw, 21px);
   color: #7a5650;
 }
 
+/* Music Button */
 .music-btn {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: 14px;
+  bottom: 14px;
   z-index: 9999;
   border: none;
-  padding: 13px 18px;
+  padding: 12px 15px;
   border-radius: 999px;
   background: #5b2a22;
   color: white;
   font-family: "Montserrat", sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(91, 42, 34, 0.35);
 }
 
-@media (max-width: 600px) {
-  .guest-section h1 {
-    font-size: 54px;
+/* Tablet */
+@media (max-width: 768px) {
+  .invited-name {
+    top: 47.25%;
+    width: 60%;
+    font-size: clamp(8px, 2.5vw, 22px);
   }
 
-  .guest-text {
-    font-size: 21px;
+  .countdown-section,
+  .rsvp-section {
+    padding: 55px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .guest-section {
+    padding: 34px 18px;
+  }
+
+  .guest-small {
+    letter-spacing: 2.5px;
+  }
+
+  .image-section,
+  .quote-section {
+    align-items: flex-start;
+  }
+
+  .invitation-wrapper {
+    max-width: 100%;
+  }
+
+  .invitation-img,
+  .quote-img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .invited-name {
+    top: 47.18%;
+    width: 57%;
+    height: 3.8%;
+    font-size: clamp(7px, 2.35vw, 15px);
+    letter-spacing: 0.1px;
   }
 
   .section-card {
-    padding: 38px 20px;
-  }
-
-  .section-title {
-    font-size: 32px;
+    padding: 38px 18px;
+    border-radius: 22px;
   }
 
   .countdown {
-    gap: 8px;
+    gap: 7px;
   }
 
   .countdown div {
-    padding: 14px 4px;
-  }
-
-  .countdown span {
-    font-size: 28px;
-  }
-
-  .countdown small {
-    font-size: 9px;
+    padding: 13px 4px;
+    border-radius: 14px;
   }
 
   .rsvp-buttons {
     flex-direction: column;
+    gap: 12px;
   }
 
   .yes-btn,
   .no-btn {
     width: 100%;
+    min-width: unset;
+  }
+
+  .music-btn {
+    right: 10px;
+    bottom: 10px;
+    padding: 10px 13px;
+    font-size: 11px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 390px) {
+  .invited-name {
+    top: 47.15%;
+    width: 56%;
+    font-size: clamp(6.5px, 2.25vw, 13px);
+  }
+
+  .section-card {
+    padding: 34px 14px;
   }
 }

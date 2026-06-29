@@ -16,9 +16,13 @@
     }
 
     body {
-      min-height: 100vh;
+      min-height: 100svh;
       font-family: "Montserrat", sans-serif;
-      background: #f9f7f5;
+      background:
+        linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.96)),
+        url("bible-quote.jpg");
+      background-size: cover;
+      background-position: center;
       color: #5b2a22;
       display: flex;
       justify-content: center;
@@ -29,7 +33,7 @@
     .sender-card {
       width: 100%;
       max-width: 500px;
-      background: white;
+      background: rgba(255, 255, 255, 0.92);
       padding: 34px 26px;
       border-radius: 24px;
       box-shadow: 0 20px 60px rgba(91, 42, 34, 0.15);
@@ -39,7 +43,7 @@
 
     h1 {
       font-family: "Cormorant Garamond", serif;
-      font-size: 34px;
+      font-size: 36px;
       margin-bottom: 8px;
       color: #5b2a22;
     }
@@ -60,6 +64,8 @@
       outline: none;
       margin-bottom: 14px;
       font-family: "Montserrat", sans-serif;
+      color: #5b2a22;
+      background: white;
     }
 
     button {
@@ -73,6 +79,7 @@
       cursor: pointer;
       font-size: 15px;
       margin-top: 8px;
+      font-family: "Montserrat", sans-serif;
     }
 
     .copy-btn {
@@ -89,6 +96,31 @@
       word-break: break-all;
       color: #76514a;
       display: none;
+      text-align: left;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 18px;
+      }
+
+      .sender-card {
+        padding: 30px 20px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 13px;
+      }
+
+      input,
+      button {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -96,6 +128,7 @@
 <body>
   <div class="sender-card">
     <h1>Send Invitation</h1>
+
     <p>
       Type the guest name and create a personalized wedding invitation link.
     </p>
