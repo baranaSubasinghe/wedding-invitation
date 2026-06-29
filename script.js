@@ -1,3 +1,10 @@
+const params = new URLSearchParams(window.location.search);
+const guest = params.get("guest");
+
+if (guest) {
+  document.getElementById("guestName").innerText = guest;
+}
+
 const weddingDate = new Date("August 27, 2026 19:00:00").getTime();
 
 const timer = setInterval(() => {
@@ -27,39 +34,30 @@ const timer = setInterval(() => {
 }, 1000);
 
 const music = document.getElementById("weddingMusic");
-
 const musicBtn = document.getElementById("musicBtn");
 
 window.addEventListener("load", () => {
+  if (!music || !musicBtn) return;
 
-  music.volume = 0.5;
+  music.volume = 0.45;
 
-  const playPromise = music.play();
-
-  if (playPromise !== undefined) {
-
-    playPromise
-
-      .then(() => {
-
-        musicBtn.classList.add("hidden");
-
-      })
-
-      .catch(() => {
-
-        musicBtn.classList.remove("hidden");
-
-      });
-
-  }
-
+  music.play()
+    .then(() => {
+      musicBtn.innerText = "❚❚ Pause Music";
+    })
+    .catch(() => {
+      musicBtn.innerText = "♫ Play Music";
+    });
 });
 
-function startMusic() {
+function toggleMusic() {
+  if (!music || !musicBtn) return;
 
-  music.play();
-
-  musicBtn.classList.add("hidden");
-
+  if (music.paused) {
+    music.play();
+    musicBtn.innerText = "❚❚ Pause Music";
+  } else {
+    music.pause();
+    musicBtn.innerText = "♫ Play Music";
+  }
 }

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Send Wedding Invitation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      background: #f9f7f5;
+      color: #5b2a22;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+
+    .sender-card {
+      width: 100%;
+      max-width: 500px;
+      background: white;
+      padding: 34px 26px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(91, 42, 34, 0.15);
+      border: 1px solid rgba(91, 42, 34, 0.18);
+      text-align: center;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+      color: #5b2a22;
+    }
+
+    p {
+      font-size: 14px;
+      color: #8b6b65;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 14px;
+      border: 1px solid rgba(91, 42, 34, 0.25);
+      font-size: 15px;
+      outline: none;
+      margin-bottom: 14px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 999px;
+      background: #5b2a22;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+
+    .copy-btn {
+      background: #efe8e4;
+      color: #5b2a22;
+    }
+
+    .preview {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 14px;
+      background: #faf6f3;
+      font-size: 13px;
+      word-break: break-all;
+      color: #76514a;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sender-card">
+    <h1>Send Invitation</h1>
+    <p>
+      Type the guest name and create a personalized wedding invitation link.
+    </p>
+
+    <input 
+      type="text" 
+      id="guestName" 
+      placeholder="Example: Mr. Nimal Perera / The Fernando Family"
+    />
+
+    <button onclick="sendWhatsApp()">Send on WhatsApp</button>
+    <button class="copy-btn" onclick="copyLink()">Copy Invitation Link</button>
+
+    <div class="preview" id="previewLink"></div>
+  </div>
+
+  <script>
+    const websiteLink = "https://wedding-invitation-cyan-chi.vercel.app/";
+
+    function createInvitationLink() {
+      const guestName = document.getElementById("guestName").value.trim();
+
+      if (!guestName) {
+        alert("Please enter guest name");
+        return null;
+      }
+
+      const finalLink = `${websiteLink}?guest=${encodeURIComponent(guestName)}`;
+
+      document.getElementById("previewLink").style.display = "block";
+      document.getElementById("previewLink").innerText = finalLink;
+
+      return finalLink;
+    }
+
+    function sendWhatsApp() {
+      const finalLink = createInvitationLink();
+
+      if (!finalLink) return;
+
+      const guestName = document.getElementById("guestName").value.trim();
+
+      const message = `Dear ${guestName},
+
+With great joy, we invite you to the wedding ceremony of Vihanga & Kalpani.
+
+Please open the invitation link below and kindly confirm your attendance.
+
+${finalLink}
+
+RSVP on or before 13.08.2026.`;
+
+      const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappURL, "_blank");
+    }
+
+    function copyLink() {
+      const finalLink = createInvitationLink();
+
+      if (!finalLink) return;
+
+      navigator.clipboard.writeText(finalLink);
+      alert("Invitation link copied!");
+    }
+  </script>
+</body>
+</html>

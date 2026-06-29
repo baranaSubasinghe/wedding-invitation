@@ -10,8 +10,8 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: #19354a;
-  background: #eaf5fb;
+  background: #fbf9f7;
+  color: #5b2a22;
 }
 
 .wedding-page {
@@ -19,271 +19,113 @@ body {
   overflow: hidden;
 }
 
-/* Hero Section */
-.hero-section {
+.guest-section {
   min-height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 28px;
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 38%),
-    radial-gradient(circle at bottom right, rgba(135, 198, 222, 0.45), transparent 40%),
-    linear-gradient(135deg, #eaf7fd 0%, #d8edf8 45%, #f7fbff 100%);
-}
-
-.hero-card {
-  width: 100%;
-  max-width: 520px;
-  min-height: 760px;
-  position: relative;
-  z-index: 2;
-  padding: 52px 32px;
-  text-align: center;
-  border-radius: 34px;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.94)),
-    url("https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=1200&q=80");
-  background-size: cover;
-  background-position: center;
-  border: 1px solid rgba(79, 150, 184, 0.28);
-  box-shadow: 0 30px 90px rgba(45, 105, 135, 0.26);
+  padding: 40px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  animation: fadeUp 1s ease;
+  align-items: center;
+  background:
+    linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.92)),
+    url("bible-quote.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
 }
 
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 18px;
-  border: 1px solid rgba(70, 139, 174, 0.35);
-  border-radius: 26px;
-  pointer-events: none;
-}
-
-.small-heading {
+.guest-small {
   font-size: 13px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #3f89a9;
-  font-weight: 600;
+  color: #8d625b;
   margin-bottom: 20px;
 }
 
-.ornament {
-  font-size: 34px;
-  color: #5b9fbd;
-  margin-bottom: 18px;
-}
-
-.family-line {
-  max-width: 380px;
-  margin: 0 auto 14px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 19px;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #315d73;
-  letter-spacing: 0.4px;
-}
-
-.couple-title {
+.guest-section h1 {
   font-family: "Great Vibes", cursive;
-  font-size: 74px;
+  font-size: 70px;
   font-weight: 400;
-  line-height: 0.95;
-  color: #17364c;
-  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.7);
-  margin-bottom: 14px;
+  color: #5b2a22;
+  margin-bottom: 20px;
 }
 
-.couple-title span {
-  display: block;
+.guest-text {
+  max-width: 560px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
-  color: #5b9fbd;
-  margin: 10px 0;
-}
-
-.sub-text {
-  max-width: 390px;
-  margin: 20px auto 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
+  font-size: 25px;
   line-height: 1.6;
-  color: #315d73;
+  color: #7a5650;
 }
 
-.date-panel {
-  margin: 32px auto 12px;
+.image-section,
+.quote-section {
+  width: 100%;
+  background: #fbf9f7;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 22px;
 }
 
-.date-side {
-  min-width: 92px;
-  font-size: 13px;
-  line-height: 1.5;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #2c6883;
-  padding: 12px 0;
-  border-top: 1px solid rgba(63, 137, 169, 0.5);
-  border-bottom: 1px solid rgba(63, 137, 169, 0.5);
+.invitation-img,
+.quote-img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
 }
 
-.date-main {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 64px;
-  font-weight: 700;
-  color: #17364c;
-}
-
-.time-text {
-  font-size: 15px;
-  letter-spacing: 1px;
-  color: #315d73;
-  margin-bottom: 32px;
-}
-
-.open-btn {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 14px 34px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #2f789c, #80bed6);
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  box-shadow: 0 12px 30px rgba(47, 120, 156, 0.35);
-  transition: 0.3s ease;
-}
-
-.open-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 35px rgba(47, 120, 156, 0.42);
-}
-
-/* Decorative Floral */
-.floral {
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  background:
-    radial-gradient(circle at 40% 40%, rgba(255,255,255,0.95) 0 9px, transparent 10px),
-    radial-gradient(circle at 60% 42%, rgba(165,215,232,0.85) 0 16px, transparent 17px),
-    radial-gradient(circle at 48% 60%, rgba(255,255,255,0.92) 0 18px, transparent 19px),
-    radial-gradient(circle at 70% 65%, rgba(125,190,214,0.75) 0 12px, transparent 13px),
-    radial-gradient(circle at 28% 68%, rgba(210,236,246,0.95) 0 14px, transparent 15px);
-  opacity: 0.75;
-  filter: blur(0.2px);
-}
-
-.floral::after {
-  content: "";
-  position: absolute;
-  inset: 48px;
-  border: 2px solid rgba(63, 137, 169, 0.22);
-  border-radius: 50%;
-  transform: rotate(25deg);
-}
-
-.floral-top-left {
-  top: -60px;
-  left: -60px;
-}
-
-.floral-bottom-right {
-  bottom: -60px;
-  right: -60px;
-  transform: rotate(180deg);
-}
-
-/* Common Sections */
-.details-section,
+.countdown-section,
 .rsvp-section {
-  padding: 80px 24px;
+  padding: 70px 22px;
   background:
-    linear-gradient(rgba(234, 247, 253, 0.88), rgba(247, 252, 255, 0.95)),
-    url("https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=80");
+    linear-gradient(rgba(255,255,255,0.91), rgba(255,255,255,0.95)),
+    url("bible-quote.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .rsvp-section {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .section-card {
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 48px 32px;
+  padding: 46px 30px;
   text-align: center;
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(79, 150, 184, 0.28);
-  box-shadow: 0 22px 70px rgba(45, 105, 135, 0.18);
-  backdrop-filter: blur(10px);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(91, 42, 34, 0.2);
+  box-shadow: 0 20px 70px rgba(91, 42, 34, 0.12);
 }
 
 .section-label {
   font-size: 12px;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #3f89a9;
+  color: #8d625b;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-title {
-  font-family: "Great Vibes", cursive;
-  font-size: 58px;
-  font-weight: 400;
-  color: #17364c;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #5b2a22;
   margin-bottom: 18px;
 }
 
 .details-text {
-  max-width: 560px;
+  max-width: 520px;
   margin: 0 auto 28px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.7;
-  color: #315d73;
+  color: #7a5650;
 }
 
-.info-box {
-  max-width: 470px;
-  margin: 0 auto 32px;
-  padding: 26px 22px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #f6fbff, #e9f6fc);
-  border: 1px solid rgba(63, 137, 169, 0.22);
-}
-
-.info-box h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 28px;
-  color: #17364c;
-  margin-bottom: 12px;
-}
-
-.info-box p {
-  font-size: 14px;
-  line-height: 1.9;
-  color: #315d73;
-}
-
-/* Countdown */
 .countdown {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -293,10 +135,10 @@ body {
 
 .countdown div {
   padding: 18px 8px;
-  border-radius: 20px;
-  background: linear-gradient(180deg, #ffffff, #e9f6fc);
-  border: 1px solid rgba(63, 137, 169, 0.24);
-  box-shadow: 0 10px 30px rgba(45, 105, 135, 0.12);
+  border-radius: 18px;
+  background: #fbf7f5;
+  border: 1px solid rgba(91, 42, 34, 0.18);
+  box-shadow: 0 10px 30px rgba(91, 42, 34, 0.08);
 }
 
 .countdown span {
@@ -304,17 +146,16 @@ body {
   font-family: "Cormorant Garamond", serif;
   font-size: 34px;
   font-weight: 700;
-  color: #2f789c;
+  color: #5b2a22;
 }
 
 .countdown small {
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #315d73;
+  color: #8d625b;
 }
 
-/* Buttons */
 .location-btn,
 .yes-btn,
 .no-btn {
@@ -327,17 +168,9 @@ body {
 
 .location-btn {
   padding: 14px 36px;
-  color: #fff;
-  background: linear-gradient(135deg, #2f789c, #80bed6);
-  box-shadow: 0 12px 30px rgba(47, 120, 156, 0.3);
-}
-
-.location-btn:hover {
-  transform: translateY(-3px);
-}
-
-.rsvp-card {
-  position: relative;
+  color: white;
+  background: #5b2a22;
+  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.22);
 }
 
 .rsvp-buttons {
@@ -355,17 +188,18 @@ body {
 }
 
 .yes-btn {
-  color: #fff;
-  background: linear-gradient(135deg, #2f789c, #80bed6);
-  box-shadow: 0 12px 30px rgba(47, 120, 156, 0.28);
+  color: white;
+  background: #5b2a22;
+  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.2);
 }
 
 .no-btn {
-  color: #2f789c;
-  background: #ffffff;
-  border: 1px solid rgba(63, 137, 169, 0.35);
+  color: #5b2a22;
+  background: white;
+  border: 1px solid rgba(91, 42, 34, 0.28);
 }
 
+.location-btn:hover,
 .yes-btn:hover,
 .no-btn:hover {
   transform: translateY(-3px);
@@ -374,75 +208,42 @@ body {
 .footer-note {
   margin-top: 28px;
   font-family: "Cormorant Garamond", serif;
-  font-size: 20px;
-  color: #315d73;
+  font-size: 21px;
+  color: #7a5650;
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.music-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  border: none;
+  padding: 13px 18px;
+  border-radius: 999px;
+  background: #5b2a22;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(91, 42, 34, 0.35);
 }
 
-/* Mobile Responsive */
 @media (max-width: 600px) {
-  .hero-section {
-    padding: 18px;
-  }
-
-  .hero-card {
-    min-height: 700px;
-    padding: 42px 22px;
-    border-radius: 28px;
-  }
-
-  .couple-title {
-    font-size: 60px;
-  }
-
-  .couple-title span {
-    font-size: 32px;
-  }
-
-  .family-line {
-    font-size: 17px;
-  }
-
-  .sub-text {
-    font-size: 19px;
-  }
-
-  .date-panel {
-    gap: 12px;
-  }
-
-  .date-side {
-    min-width: 78px;
-    font-size: 11px;
-  }
-
-  .date-main {
+  .guest-section h1 {
     font-size: 54px;
   }
 
+  .guest-text {
+    font-size: 21px;
+  }
+
   .section-card {
-    padding: 40px 20px;
-    border-radius: 28px;
+    padding: 38px 20px;
   }
 
   .section-title {
-    font-size: 48px;
-  }
-
-  .details-text {
-    font-size: 19px;
+    font-size: 32px;
   }
 
   .countdown {
@@ -451,7 +252,6 @@ body {
 
   .countdown div {
     padding: 14px 4px;
-    border-radius: 16px;
   }
 
   .countdown span {
@@ -470,43 +270,4 @@ body {
   .no-btn {
     width: 100%;
   }
-
-  .floral {
-    width: 190px;
-    height: 190px;
-  }
-}
-
-@media (max-width: 380px) {
-  .couple-title {
-    font-size: 52px;
-  }
-
-  .date-side {
-    min-width: 68px;
-  }
-
-  .date-main {
-    font-size: 48px;
-  }
-}
-.music-btn {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 999;
-  border: none;
-  padding: 13px 18px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #2f789c, #80bed6);
-  color: white;
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 12px 30px rgba(47, 120, 156, 0.35);
-}
-
-.hidden {
-  display: none;
 }
