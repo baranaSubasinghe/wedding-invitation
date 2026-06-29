@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Wedding Invitation</title>
+  <title>Vihanga & Kalpani Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
-    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" 
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" 
     rel="stylesheet"
   >
 
@@ -17,91 +17,154 @@
 </head>
 
 <body>
-  <section class="page">
-    <div class="invitation-card">
+   <audio id="weddingMusic" autoplay loop>
 
-      <p class="top-text">Together with their families</p>
+    <source src="wedding-song.mp3" type="audio/mpeg">
 
-      <h1 class="couple-name">Vihanga</h1>
-      <p class="amp">&</p>
-      <h1 class="couple-name">kalpani</h1>
+  </audio>
 
-      <p class="invite-text">
-        joyfully invite you to celebrate their wedding
-      </p>
+  <button class="music-btn hidden" id="musicBtn" onclick="startMusic()">
 
-      <div class="date-box">
-        <span>Thursday</span>
-        <strong>27</strong>
-        <span>August 2026</span>
+    ♫ Tap to Play Music
+
+  </button>
+  <main class="wedding-page">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="floral floral-top-left"></div>
+      <div class="floral floral-bottom-right"></div>
+
+      <div class="hero-card">
+        <p class="small-heading">Wedding Invitation</p>
+
+        <div class="ornament">❦</div>
+
+        <p class="family-line">
+          Mr & Mrs Subasinghe's middle son
+        </p>
+
+        <h1 class="couple-title">
+          Vihanga
+          <span>&</span>
+          Kalpani
+        </h1>
+
+        <p class="family-line">
+          Mr & Mrs Ekanayeka's eldest daughter
+        </p>
+
+        <p class="sub-text">
+          Together with their families, joyfully invite you to celebrate their wedding day
+        </p>
+
+        <div class="date-panel">
+          <div class="date-side">Thursday</div>
+          <div class="date-main">27</div>
+          <div class="date-side">August<br>2026</div>
+        </div>
+
+        <p class="time-text">7:00 PM onwards</p>
+
+        <a href="#details" class="open-btn">Open Invitation</a>
       </div>
+    </section>
 
-      <p class="time">7:00 PM onwards</p>
+    <!-- Details Section -->
+    <section class="details-section" id="details">
+      <div class="section-card">
 
-      <p class="venue">
-        Suriya Resort,<br>
-        Waikkala, Sri Lanka
-      </p>
+        <p class="section-label">Save The Date</p>
 
-      <div class="countdown">
-        <div>
-          <span id="days">00</span>
-          <small>Days</small>
+        <h2 class="section-title">Vihanga & Kalpani</h2>
+
+        <p class="details-text">
+          With love and blessings from their families, we would be delighted to have you with us
+          as Vihanga, Janaka & Iranganie's middle son, and Kalpani, Ruwani & Jagath's eldest daughter,
+          begin this beautiful new chapter together.
+        </p>
+
+        <div class="info-box">
+          <h3>Wedding Reception</h3>
+          <p>Thursday, 27 August 2026</p>
+          <p>7:00 PM onwards</p>
+          <p>Suriya Resort, Waikkala, Sri Lanka</p>
         </div>
-        <div>
-          <span id="hours">00</span>
-          <small>Hours</small>
-        </div>
-        <div>
-          <span id="minutes">00</span>
-          <small>Minutes</small>
-        </div>
-        <div>
-          <span id="seconds">00</span>
-          <small>Seconds</small>
-        </div>
-      </div>
 
-      <a 
-        href="https://maps.app.goo.gl/Nn2h7sFLDueFdToS6" 
-        target="_blank" 
-        class="location-btn"
-      >
-        View Location
-      </a>
+        <div class="countdown">
+          <div>
+            <span id="days">00</span>
+            <small>Days</small>
+          </div>
 
-      <h2 class="rsvp-title">Will you be joining us?</h2>
+          <div>
+            <span id="hours">00</span>
+            <small>Hours</small>
+          </div>
 
-      <div class="rsvp-buttons">
+          <div>
+            <span id="minutes">00</span>
+            <small>Minutes</small>
+          </div>
+
+          <div>
+            <span id="seconds">00</span>
+            <small>Seconds</small>
+          </div>
+        </div>
+
         <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Yes+,+I'm+Coming" 
+          href="https://maps.app.goo.gl/Nn2h7sFLDueFdToS6" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="yes-btn"
+          class="location-btn"
         >
-          Yes, I’m Coming
-        </a>
-
-        <a 
-          href="https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Sorry,+I+Can't+Come" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          class="no-btn"
-        >
-          Sorry, I Can’t Come
+          View Location
         </a>
       </div>
+    </section>
 
-      <p class="bottom-note">
-        Kindly respond before 10th August 2026
-      </p>
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+      <div class="section-card rsvp-card">
 
-    </div>
-  </section>
+        <p class="section-label">RSVP</p>
+
+        <h2 class="section-title">Will you be joining us?</h2>
+
+        <p class="details-text">
+          Kindly let us know your availability before 10th August 2026.
+        </p>
+
+        <div class="rsvp-buttons">
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Yes+,+I'm+Coming" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="yes-btn"
+          >
+            Yes, I’m Coming
+          </a>
+
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Sorry,+I+Can't+Come" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="no-btn"
+          >
+            Sorry, I Can’t Come
+          </a>
+        </div>
+
+        <p class="footer-note">
+          Your presence will make our special day even more memorable.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-<!-- 
-https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Yes+,+I'm+Coming
-https://docs.google.com/forms/d/e/1FAIpQLSenoeeW-GaqPg-8CktWlD7vNxTpVNVENnKUKVrQCi29MvmIHw/viewform?usp=pp_url&entry.468338630=Sorry,+I+Can't+Come -->
